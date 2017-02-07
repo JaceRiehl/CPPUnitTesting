@@ -17,8 +17,7 @@ public:
      * A GUI window at location c.
      * @param w The width of the window (default: 100).
      * @param h The height of the window (default: 100).
-     * @throw illegal_size_error Thrown if the width exceeds the maximum width or height,
-     * or if the width or height are 0.
+     * @throw illegal_size_error Thrown if the width exceeds the maximum width or height.
      * @exception illegal_placement_error Thrown if \a w cannot be placed at \a c
      */
     Window(int w=100, int h=100);
@@ -26,7 +25,12 @@ public:
     /**
     * Destructor for window
     */
-    virtual ~Window(){}
+    virtual ~Window();
+
+    /**
+     * @return the location of the window
+     */
+    Coordinate getLocation();
 
     /**
      * Add a widget to the window
@@ -52,7 +56,6 @@ public:
 
 
     /**
-    * @param The widget to remove.
     * @return The widgets in the window.
     */
     void removeWidget(Widget* w);
@@ -60,8 +63,6 @@ public:
 
     /**
     * Resize the window.
-    * @param w The new width of the window.
-    * @param h The new height of the window.
     * @throw illegal_size_error Thrown if the new window size will exceed either the maximum width or height
     * or if resizing the window will cutoff a widget.
     */

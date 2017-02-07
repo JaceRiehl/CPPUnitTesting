@@ -4,14 +4,12 @@
 #include <Window.h>
 
 /**
-* This class provides a concrete implemenation for Window for testing.
+* This class provides a concrete implemenation for Window.
 */
 class BaseWindow : public Window
 {
     public:
-        BaseWindow();
-
-        BaseWindow(int w, int h);
+        BaseWindow(int w=10, int h=10);
 
         virtual ~BaseWindow();
 

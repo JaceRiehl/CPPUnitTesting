@@ -37,5 +37,5 @@ coverage: $(PROGRAM_TEST)
 	$(LCOV) -a $(SRC)/$(PROGRAM_TEST)_base.info -a $(SRC)/$(COVERAGE_RESULTS) -o $(SRC)/$(COVERAGE_RESULTS) $(LCOV_FLAGS)
 	genhtml $(SRC)/$(COVERAGE_RESULTS) --output-directory $(COVERAGE_REPORT_DIR)
 	rm -f $(SRC)/*.gc* $(SRC)/$(COVERAGE_RESULTS) $(SRC)/$(PROGRAM_TEST)_base.info
-	firefox $(COVERAGE_REPORT_DIR)/index.html
+	firefox $(COVERAGE_REPORT_DIR)/index.html&
 
