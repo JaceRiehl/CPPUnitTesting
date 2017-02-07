@@ -4,7 +4,7 @@
 #include <Window.h>
 
 /**
-* This class provides a concrete implemenation for Window.
+* This class provides a concrete implemenation for Window for testing.
 */
 class BaseWindow : public Window
 {

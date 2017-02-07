@@ -14,11 +14,14 @@ public:
     virtual ~Coordinate();
 
     /**
+    * @param c The coordinate to compare to.
     * @return true if the x and y values of c are the same as those of the object, false otherwise.
     */
     bool operator==(const Coordinate& c);
 
     /**
+    * @param os The output stream to write the representation to.
+    * @param c The coordinate to wrtie out.
     * @return an output stream containing a representation of the coordinate in "[x,y]" format.
     */
     friend std::ostream& operator<<(std::ostream& os, const Coordinate& c);

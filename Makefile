@@ -9,12 +9,15 @@ LINKFLAGS= -lcppunit
 PROGRAM_TEST = tests
 
 GCOV = gcov11
-COVERAGE_RESULTS = result.coverage
+LCOV = lcov
+COVERAGE_RESULTS = coverage.results
+COVERAGE_REPORT_DIR = coverage
+LCOV_FLAGS = --gcov-tool=$(GCOV) --no-external -b $(SRC)
 
 all: clean coverage
 
 $(PROGRAM_TEST): $(TESTS) $(SRC) main.cpp
-	$(CXX) $(CXXFLAGS) -o $(PROGRAM_TEST) $(TESTS)/* $(SRC)/* main.cpp $(LINKFLAGS)
+	$(CXX) $(CXXFLAGS) -o $(PROGRAM_TEST) $(TESTS)/*.cpp $(SRC)/*.cpp main.cpp $(LINKFLAGS)
 	./$(PROGRAM_TEST)
 
 # Default compile
@@ -25,9 +28,14 @@ $(PROGRAM_TEST): $(TESTS) $(SRC) main.cpp
 clean:
 	rm -rf objs bin $(PROGRAM_TEST) $(COVERAGE_RESULTS) 
 
-coverage: $(PROGRAM_TEST)	
+coverage: $(PROGRAM_TEST)
 	mv *.gc* $(SRC)
-	$(GCOV) $(SRC)/*		
-	grep -r "####" *.cpp.gcov > $(COVERAGE_RESULTS)
-	more $(COVERAGE_RESULTS)
-	rm -f *.gcov  $(SRC)/*.gc*
+	$(LCOV) -c -i -d $(SRC) -o $(SRC)/$(PROGRAM_TEST)_base.info $(LCOV_FLAGS)
+	./$(PROGRAM_TEST)
+	mv *.gc* $(SRC)
+	$(LCOV) --c --d src -o $(SRC)/$(COVERAGE_RESULTS) $(LCOV_FLAGS)
+	$(LCOV) -a $(SRC)/$(PROGRAM_TEST)_base.info -a $(SRC)/$(COVERAGE_RESULTS) -o $(SRC)/$(COVERAGE_RESULTS) $(LCOV_FLAGS)
+	genhtml $(SRC)/$(COVERAGE_RESULTS) --output-directory $(COVERAGE_REPORT_DIR)
+	rm -f $(SRC)/*.gc* $(SRC)/$(COVERAGE_RESULTS) $(SRC)/$(PROGRAM_TEST)_base.info
+	firefox $(COVERAGE_REPORT_DIR)/index.html
+

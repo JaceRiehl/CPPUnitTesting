@@ -14,7 +14,7 @@ public:
     */
     Widget(Coordinate c, unsigned int w, unsigned int h):location{c}, width{w}, height{h} {}
 
-    virtual ~Widget(){}
+    virtual ~Widget() {}
 
     /**
     * Determine if the widget is at location (x,y).
@@ -23,7 +23,18 @@ public:
     bool locatedAt(Coordinate c);
 
     /**
-    * Get the representation of the widget at \a c.
+    * @return the width of the widget.
+    */
+    unsigned int getWidth();
+
+    /**
+    * @return the width of the widget.
+    */
+    unsigned int getHeight();
+
+    /**
+    * Get the representation of the widget at \a c, where \a c is relative to the widget.
+    * @param c The coordinate at which to get the representation of the widget.
     * @throw widget_err if \a c is outside of widget boundry.
     */
     virtual char getAt(Coordinate c) = 0;
