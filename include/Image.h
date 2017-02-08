@@ -8,17 +8,8 @@ class Image : public Widget
 {
 
 public:
-    /**
-    * Constructor of a image.
-    */
     Image(Coordinate c, unsigned int w, unsigned int h);
-
     virtual ~Image();
-
-    /**
-    * @return Returns 'I' as the representation of an image.
-    * @throw widget_err if \a c is outside the bounds of the image, where \a c is relative to the image not the containing window.
-    */
     char getAt(Coordinate c);
 };
 

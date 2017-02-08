@@ -13,10 +13,7 @@ class BaseWindow : public Window
 
         virtual ~BaseWindow();
 
-        /**
-        * Method does nothing.
-        */
-        void draw(){};
+        void draw();
 };
 
 #endif // BASEWINDOW_H
