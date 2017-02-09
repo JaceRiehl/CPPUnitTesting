@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1486587951 source:/home/riej2720/asn2/main.cpp
+	<cppunit/CompilerOutputter.h>
+	<cppunit/extensions/TestFactoryRegistry.h>
+	<cppunit/ui/text/TestRunner.h>
+
+1486593101 source:/home/riej2720/asn2/src/Coordinate.cpp
+	"Coordinate.h"
+	<iostream>
+
+1486587996 /home/riej2720/asn2/include/Coordinate.h
+	<iostream>
+
+1486259200 source:/home/riej2720/asn2/src/TestCoordinate.cpp
+	"TestCoordinate.h"
+	"Coordinate.h"
+
+1486256479 /home/riej2720/asn2/test/TestCoordinate.h
+	"Coordinate.h"
+	<cppunit/extensions/HelperMacros.h>
+
