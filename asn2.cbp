@@ -47,8 +47,12 @@
 		<Unit filename="include/Window.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Coordinate.cpp" />
+		<Unit filename="src/Image.cpp" />
 		<Unit filename="src/TestCoordinate.cpp" />
+		<Unit filename="src/TestImage.cpp" />
+		<Unit filename="src/Widget.cpp" />
 		<Unit filename="test/TestCoordinate.h" />
+		<Unit filename="test/TestImage.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />
