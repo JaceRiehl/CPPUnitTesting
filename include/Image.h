@@ -2,6 +2,7 @@
 #define IMAGE_H
 
 #include <Widget.h>
+#include "Exceptions.h"
 
 
 class Image : public Widget

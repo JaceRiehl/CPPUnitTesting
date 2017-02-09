@@ -19,3 +19,34 @@
 	"Coordinate.h"
 	<cppunit/extensions/HelperMacros.h>
 
+1486679130 source:/home/riej2720/asn2/src/Image.cpp
+	"Image.h"
+	"Exceptions.h"
+
+1486678455 /home/riej2720/asn2/include/Image.h
+	<Widget.h>
+	"Exceptions.h"
+
+1486587997 /home/riej2720/asn2/include/Widget.h
+	"Coordinate.h"
+
+1486587996 /home/riej2720/asn2/include/Exceptions.h
+	<stdexcept>
+
+1486264197 source:/home/riej2720/asn2/src/TestImage.cpp
+	"TestImage.h"
+	"Exceptions.h"
+	"Coordinate.h"
+	"Image.h"
+	"Widget.h"
+
+1486167436 /home/riej2720/asn2/test/TestImage.h
+	"Coordinate.h"
+	<cppunit/extensions/HelperMacros.h>
+	"Image.h"
+	"Widget.h"
+
+1486678557 source:/home/riej2720/asn2/src/Widget.cpp
+	"Widget.h"
+	"Coordinate.h"
+
