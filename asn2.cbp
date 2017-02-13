@@ -50,9 +50,12 @@
 		<Unit filename="src/Image.cpp" />
 		<Unit filename="src/TestCoordinate.cpp" />
 		<Unit filename="src/TestImage.cpp" />
+		<Unit filename="src/TestTextbox.cpp" />
+		<Unit filename="src/Textbox.cpp" />
 		<Unit filename="src/Widget.cpp" />
 		<Unit filename="test/TestCoordinate.h" />
 		<Unit filename="test/TestImage.h" />
+		<Unit filename="test/TestTextbox.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />

@@ -10,9 +10,7 @@
 
     char Image::getAt(Coordinate c)
     {
-        if(c == this->location)
-            return 'I';
-       else
-            checkOutOfBounds(c);
+        checkOutOfBounds(c);
+        return 'I';
 
     }
