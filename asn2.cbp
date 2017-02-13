@@ -54,6 +54,7 @@
 		<Unit filename="src/TestWindow.cpp" />
 		<Unit filename="src/Textbox.cpp" />
 		<Unit filename="src/Widget.cpp" />
+		<Unit filename="src/Window.cpp" />
 		<Unit filename="test/TestCoordinate.h" />
 		<Unit filename="test/TestImage.h" />
 		<Unit filename="test/TestTextbox.h" />
