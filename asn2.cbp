@@ -46,6 +46,7 @@
 		<Unit filename="include/Widget.h" />
 		<Unit filename="include/Window.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/BaseWindow.cpp" />
 		<Unit filename="src/Coordinate.cpp" />
 		<Unit filename="src/Image.cpp" />
 		<Unit filename="src/TestCoordinate.cpp" />
