@@ -46,7 +46,7 @@
 	"Image.h"
 	"Widget.h"
 
-1487016451 source:/home/riej2720/asn2/src/Widget.cpp
+1487110023 source:/home/riej2720/asn2/src/Widget.cpp
 	"Widget.h"
 	"Coordinate.h"
 	"Exceptions.h"
@@ -86,7 +86,7 @@
 1487090066 /home/riej2720/asn2/include/BaseWindow.h
 	<Window.h>
 
-1487092592 source:/home/riej2720/asn2/src/TestWindow.cpp
+1487093695 source:/home/riej2720/asn2/src/TestWindow.cpp
 	"TestWindow.h"
 	"Exceptions.h"
 	"BaseWindow.h"
@@ -103,14 +103,21 @@
 	<string>
 	"Textbox.h"
 
-1487092599 source:/home/riej2720/asn2/src/Window.cpp
+1487103906 source:/home/riej2720/asn2/src/Window.cpp
 	"Window.h"
 	"AsciiWindow.h"
 	"Exceptions.h"
+	"Widget.h"
+	"Coordinate.h"
 	<string>
 	<vector>
 
 1486587996 /home/riej2720/asn2/include/AsciiWindow.h
 	<Window.h>
 	<iostream>
+
+1487110004 source:/home/riej2720/asn2/src/AsciiWindow.cpp
+	"AsciiWindow.h"
+	"Window.h"
+	"Widget.h"
 

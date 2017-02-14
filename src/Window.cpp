@@ -1,6 +1,9 @@
 #include "Window.h"
 #include "AsciiWindow.h"
 #include "Exceptions.h"
+#include "Widget.h"
+#include "Coordinate.h"
+
 #include <string>
 #include <vector>
 
@@ -18,24 +21,20 @@
 
     Window::~Window()
     {
-
+        delete[] contents;
     }
 
 
     void Window::addWidget(Widget* w)
     {
     //add operation failed error
-    //if(w < (contents[i]->width + contents[i]->location.x) || h < (contents[i]->height + contents[i]->location.y))
-     //if((w < (contents[i]->getWidth() + x)) || (h < (contents[i]->getHeight() + y)))
+
      for(int i = 0; i < contents.size(); i++)
         {
-
-            if(w->getWidth)
-            {
-            contents.push_back(w);
-            }
-
+            if(w->getLocation().x == contents[i]->getLocation().x && w->getLocation().y == contents[i]->getLocation().y)
+             throw widget_operation_failed_error("Widget Overlaps");
         }
+         contents.push_back(w);
     }
 
     unsigned int Window::getWidth()
