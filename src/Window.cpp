@@ -5,7 +5,7 @@
 #include <vector>
 
 
-    Window(int w=100, int h=100)
+    Window::Window(int w, int h)
     {
         if(w > 1024 || h > 1024)
             throw illegal_size_error("Window exceeds maximum size");
@@ -24,6 +24,7 @@
 
     void Window::addWidget(Widget* w)
     {
+        //add operation failed error
         contents.push_back(w);
     }
 
@@ -44,29 +45,33 @@
 
     void Window::removeWidget(Widget* w)
     {
-        for(int i = 0; i < std::vector contents.size; i++)
+        for(int i = 0; i < contents.size(); i++)
         {
-            if(contents[i] == *w)
-                contents.erase(i);
+            if(contents[i] == w)
+                contents.erase(contents.begin()+i);
         }
     }
 
     void Window::resize(unsigned int w, unsigned int h)
     {
-        if((w || h) > 1024)
-            throw illegal_size_error("Window exceeds maximum size");
-
-        for(int i = 0; i < contents.size() + 1; i++)
+        for(int i = 0; i < contents.size(); i++)
         {
-            if(w < (contents[i]->width + contents[i]->location.x) || h < (contents[i]->height + contents[i]->location.y))
+            unsigned int x = contents[i]->getLocation().x;
+            unsigned int y = contents[i]->getLocation().y;
+            //if(w < (contents[i]->width + contents[i]->location.x) || h < (contents[i]->height + contents[i]->location.y))
+            if((w < (contents[i]->getWidth() + x)) || (h < (contents[i]->getHeight() + y)))
                 throw illegal_size_error("Window cuts off a widget");
         }
 
-        else
-        {
-            width = w;
-            height = h;
-        }
+
+            if((w || h) > 1024)
+                throw illegal_size_error("Window exceeds maximum size");
+
+            else
+            {
+                width = w;
+                height = h;
+            }
     }
 
     void Window::setHeight(int h)
