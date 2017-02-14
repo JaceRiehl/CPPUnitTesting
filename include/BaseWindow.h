@@ -9,7 +9,7 @@
 class BaseWindow : public Window
 {
     public:
-        BaseWindow(int w=10, int h=10);
+        BaseWindow(int w=100, int h=100);
 
         virtual ~BaseWindow();
 

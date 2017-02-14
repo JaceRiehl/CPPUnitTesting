@@ -7,7 +7,7 @@
 
     Window::Window(int w, int h)
     {
-        if(w > 1024 || h > 1024)
+        if(w > MAX_WIDTH || h > MAX_HEIGHT)
             throw illegal_size_error("Window exceeds maximum size");
         else
         {
@@ -24,8 +24,18 @@
 
     void Window::addWidget(Widget* w)
     {
-        //add operation failed error
-        contents.push_back(w);
+    //add operation failed error
+    //if(w < (contents[i]->width + contents[i]->location.x) || h < (contents[i]->height + contents[i]->location.y))
+     //if((w < (contents[i]->getWidth() + x)) || (h < (contents[i]->getHeight() + y)))
+     for(int i = 0; i < contents.size(); i++)
+        {
+
+            if(w->getWidth)
+            {
+            contents.push_back(w);
+            }
+
+        }
     }
 
     unsigned int Window::getWidth()
@@ -58,13 +68,12 @@
         {
             unsigned int x = contents[i]->getLocation().x;
             unsigned int y = contents[i]->getLocation().y;
-            //if(w < (contents[i]->width + contents[i]->location.x) || h < (contents[i]->height + contents[i]->location.y))
             if((w < (contents[i]->getWidth() + x)) || (h < (contents[i]->getHeight() + y)))
                 throw illegal_size_error("Window cuts off a widget");
         }
 
 
-            if((w || h) > 1024)
+            if(w > MAX_WIDTH || h > MAX_HEIGHT)
                 throw illegal_size_error("Window exceeds maximum size");
 
             else
