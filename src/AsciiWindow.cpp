@@ -16,34 +16,35 @@
                 cout << "-";
                 cout << endl;
 
-            for(int i = 0; i < getWidth(); i++)
+            for(int i = 0; i < content.size(); i++)
             {
-                cout << "|";
-                for(int j = 0; j < getHeight(); j++)
-                {
 
-                    for(int k = 0; k < content.size(); k++)
+                for(int j = 0; j < getWidth(); j++)
+                {
+                    cout << "|";
+
+                    for(int k = 0; k < getHeight(); k++)
                     {
 
-                        if(content[k]->getLocation().x <= i && content[k]->getWidth() + content[k]->getLocation().x > i
-                           && content[k]->getLocation().y <= j && content[k]->getWidth() + content[k]->getLocation().y > j)
+                        if(content[i]->getLocation().x <= k && content[i]->getWidth() + content[i]->getLocation().x > k
+                           && content[i]->getLocation().y <= j && content[i]->getWidth() + content[i]->getLocation().y > j)
                         {
-                            Coordinate *get = new Coordinate (j,i);
-                            cout << content[k]->getAt(*get);
+                            Coordinate *get = new Coordinate ((k - content[i]->getLocation().x) , j - (content[i]->getLocation().y));
+                            cout << content[i]->getAt(*get);
                             delete get;
                         }
 
                         //need to change this to relative coordionate to the coord
-                       // Coordinate *get = new Coordinate (j,i);
-                      //  delete get;
+
                         else
                             cout << " ";
 
                     }
-
+                    cout << "|" << endl;
                 }
-                  cout << "|" << endl;
+
             }
+
             cout << " ";
               for(int i = 0; i < getWidth(); i++)
                 cout << "-";
