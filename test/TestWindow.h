@@ -23,6 +23,7 @@ class TestWindow : public CppUnit::TestFixture
     CPPUNIT_TEST(testResizeException);
     CPPUNIT_TEST(testWidgetOperationFailedError);
     CPPUNIT_TEST(testMaximumSizeDeclaration);
+    CPPUNIT_TEST(testAscii);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -79,6 +80,7 @@ class TestWindow : public CppUnit::TestFixture
      * (creates an object with the maximum size)
      */
         void testMaximumSizeDeclaration();
+        void testAscii();
 
 
     private:

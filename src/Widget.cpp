@@ -35,6 +35,6 @@
     void Widget::checkOutOfBounds(Coordinate c)
     {
         if(c.y > width || c.x > height || c.y < 0 || c.x < 0)
-            throw widget_error("Out of bounds");
+            throw widget_error("Out of bounds!");
 
     }
