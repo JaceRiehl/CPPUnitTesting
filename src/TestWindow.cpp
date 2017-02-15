@@ -157,12 +157,12 @@ void TestWindow::testAscii()
     cout << endl;
       Window* w = new AsciiWindow(10,10);
 
-    Widget* t = new Textbox(Coordinate(1,1), 1, 5, "Hello");
-    Widget* i = new Image(Coordinate(5,5), 3,3);
-    w->addWidget(i);
+    Widget* t = new Textbox(Coordinate(1,1), 5, 1, "Hello");
+    //Widget* i = new Image(Coordinate(5,5), 3,3);
+    //w->addWidget(i);
     w->addWidget(t);
-
-    w->draw();
+    cout << t->getAt(Coordinate(1,0));
+    //w->draw();
 }
 
 

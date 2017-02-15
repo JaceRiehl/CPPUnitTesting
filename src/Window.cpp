@@ -27,7 +27,7 @@
 
     void Window::addWidget(Widget* w)
     {
-    //add operation failed error
+
 
      for(int i = 0; i < contents.size(); i++)
         {
