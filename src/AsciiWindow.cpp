@@ -16,33 +16,34 @@
                 cout << "-";
                 cout << endl;
 
-            for(int i = 0; i < content.size(); i++)
+            for(int i = 0; i < getWidth(); i++)
             {
+                cout << "|";
 
-                for(int j = 0; j < getWidth(); j++)
+                for(int j = 0; j < getHeight(); j++)
                 {
-                    cout << "|";
 
-                    for(int k = 0; k < getHeight(); k++)
+                    for(int k = 0; k < content.size(); k++)
                     {
 
-                        if(content[i]->getLocation().x <= k && content[i]->getWidth() + content[i]->getLocation().x > k
-                           && content[i]->getLocation().y <= j && content[i]->getWidth() + content[i]->getLocation().y > j)
+                        if(content[k]->getLocation().x <= j && content[k]->getWidth() + content[k]->getLocation().x > j
+                           && content[k]->getLocation().y <= i && content[k]->getHeight() + content[k]->getLocation().y > i)
                         {
-                            Coordinate *get = new Coordinate ((k - content[i]->getLocation().x) , j - (content[i]->getLocation().y));
-                            cout << content[i]->getAt(*get);
+                            Coordinate *get = new Coordinate ((j - content[k]->getLocation().x) , i - (content[k]->getLocation().y));
+                            cout << content[k]->getAt(*get);
                             delete get;
+
                         }
 
-                        //need to change this to relative coordionate to the coord
 
                         else
                             cout << " ";
 
-                    }
-                    cout << "|" << endl;
-                }
 
+                    }
+
+                }
+            cout << "|" << endl;
             }
 
             cout << " ";
@@ -50,17 +51,4 @@
                 cout << "-";
         }
 
-          //Coordinate *get = new Coordinate (i,j);
-                        //if(content[k]->getWidth() < i && content[k]->getHeight() < j && content[k]->getLocation().x >= i && content[k]->getLocation().y >= j)
-                       // if( content[k]->getLocation().x >= i && content[k]->getLocation().y >= j)
-                       //   cout << content[k]->getAt(*get);
-                       // else
-                         //   cout << " ";
 
-                        /*
-                        if((content[k]->getAt(*get)) != '\0')
-                        cout << content[k]->getAt(*get);
-                        else
-                            cout << " ";
-                        */
-                      //  delete get;
