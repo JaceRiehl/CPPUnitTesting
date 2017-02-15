@@ -21,7 +21,7 @@
 
     Window::~Window()
     {
-        delete[] contents;
+        //delete[] contents;
     }
 
 
