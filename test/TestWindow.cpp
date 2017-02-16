@@ -18,6 +18,7 @@ void TestWindow::setUp()
     c1 = new Coordinate();
     w = new BaseWindow();
     w1 = new BaseWindow(wi,he);
+    w->draw();
 
 }
 void TestWindow::tearDown()
@@ -164,5 +165,6 @@ void TestWindow::testAscii()
     //cout << t->getAt(Coordinate(4,0));
     w->draw();
 }
+
 
 

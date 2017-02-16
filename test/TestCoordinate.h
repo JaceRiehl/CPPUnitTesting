@@ -10,6 +10,7 @@ class TestCoordinate : public CppUnit::TestFixture
     CPPUNIT_TEST( testConstructor );
     CPPUNIT_TEST( testEquals );
     CPPUNIT_TEST( testOstream );
+    CPPUNIT_TEST(testNotEquals);
     CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -33,6 +34,7 @@ class TestCoordinate : public CppUnit::TestFixture
     * Tests that the ostream operator is working and is outputting the correct Coordinate using stringstream
     */
     void testOstream();
+    void testNotEquals();
 
     private:
         Coordinate *testOne, *testTwo, *testThree, *testFour, *testFive;

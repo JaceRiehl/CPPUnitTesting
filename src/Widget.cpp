@@ -4,6 +4,7 @@
 #include<string>
 
     Widget::Widget(Coordinate c, unsigned int w, unsigned int h) : location(c), width(w), height(h){}
+
     Widget::~Widget()
     {
 

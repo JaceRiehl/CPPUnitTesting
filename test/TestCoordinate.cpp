@@ -66,3 +66,10 @@ CPPUNIT_TEST_SUITE_REGISTRATION( TestCoordinate );
         out3 << *testFive;
 	    CPPUNIT_ASSERT(out3.str() == test3);
 	}
+
+	void TestCoordinate::testNotEquals()
+	{
+	    CPPUNIT_ASSERT_EQUAL(true, (*testOne != *testThree));
+	    CPPUNIT_ASSERT_EQUAL(false, (*testOne != *testTwo));
+
+	}

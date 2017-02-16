@@ -50,16 +50,16 @@
 		<Unit filename="src/BaseWindow.cpp" />
 		<Unit filename="src/Coordinate.cpp" />
 		<Unit filename="src/Image.cpp" />
-		<Unit filename="src/TestCoordinate.cpp" />
-		<Unit filename="src/TestImage.cpp" />
-		<Unit filename="src/TestTextbox.cpp" />
-		<Unit filename="src/TestWindow.cpp" />
 		<Unit filename="src/Textbox.cpp" />
 		<Unit filename="src/Widget.cpp" />
 		<Unit filename="src/Window.cpp" />
+		<Unit filename="test/TestCoordinate.cpp" />
 		<Unit filename="test/TestCoordinate.h" />
+		<Unit filename="test/TestImage.cpp" />
 		<Unit filename="test/TestImage.h" />
+		<Unit filename="test/TestTextbox.cpp" />
 		<Unit filename="test/TestTextbox.h" />
+		<Unit filename="test/TestWindow.cpp" />
 		<Unit filename="test/TestWindow.h" />
 		<Extensions>
 			<envvars />

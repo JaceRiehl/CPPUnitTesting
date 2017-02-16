@@ -55,6 +55,10 @@ void TestTextbox::testConstructorException()
     Coordinate *c1 = new Coordinate(4,4);
     string textFailure = "fsdkfsjkdhfjklshdafjkhjkashdfshajkldfhjklsadhfjkshdadjkfhsjkahdfjkhsadjkfhsajkdhfjkshdafklhsadjklhf";
     CPPUNIT_ASSERT_THROW(Textbox(*c1, 5, 5, textFailure), widget_error);
+
+    Coordinate *cTest = new Coordinate(0,0);
+    CPPUNIT_ASSERT_THROW(Textbox(*cTest, 0, 0, textFailure), widget_error);
+
 }
 
 void TestTextbox:: testGetAtException()
