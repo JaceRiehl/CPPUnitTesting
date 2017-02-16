@@ -12,7 +12,9 @@ public:
 
     static const int MAX_WIDTH = 1024;
     static const int MAX_HEIGHT = 1024;
-
+    /**
+     *
+     */
     Window(int w=100, int h=100);
     virtual ~Window();
     Coordinate getLocation();

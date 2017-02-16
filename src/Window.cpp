@@ -14,16 +14,15 @@
             throw illegal_size_error("Window exceeds maximum size");
         else
         {
-            width = w;
-            height = h;
+            setWidth(w);
+            setHeight(h);
         }
     }
 
     Window::~Window()
     {
-        //delete[] contents;
-    }
 
+    }
 
     void Window::addWidget(Widget* w)
     {
@@ -31,7 +30,7 @@
 
      for(int i = 0; i < contents.size(); i++)
         {
-            if(w->getLocation().x == contents[i]->getLocation().x && w->getLocation().y == contents[i]->getLocation().y)
+            if(contents[i]->locatedAt(w->getLocation()) == true)
              throw widget_operation_failed_error("Widget Overlaps");
         }
          contents.push_back(w);
@@ -70,7 +69,6 @@
             if((w < (contents[i]->getWidth() + x)) || (h < (contents[i]->getHeight() + y)))
                 throw illegal_size_error("Window cuts off a widget");
         }
-
 
             if(w > MAX_WIDTH || h > MAX_HEIGHT)
                 throw illegal_size_error("Window exceeds maximum size");
