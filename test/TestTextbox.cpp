@@ -21,6 +21,7 @@ void TestTextbox::setUp()
 void TestTextbox::tearDown()
 {
     delete c;
+    delete c2;
     delete w;
     delete w2;
 }
@@ -28,19 +29,23 @@ void TestTextbox::tearDown()
 void TestTextbox::testGetAt()
 {
     Coordinate *c1 = new Coordinate(1,0);
-    Coordinate *c2 = new Coordinate(23,0);
+    Coordinate *ctest = new Coordinate(23,0);
     char returnChar = 'S';
     CPPUNIT_ASSERT_EQUAL(returnChar,w->getAt(*c));
     char returnChar1 = 'o';
     CPPUNIT_ASSERT_EQUAL(returnChar1,w->getAt(*c1));
     char returnChar2 = '.';
-    CPPUNIT_ASSERT_EQUAL(returnChar2,w->getAt(*c2));
+    CPPUNIT_ASSERT_EQUAL(returnChar2,w->getAt(*ctest));
 
     Coordinate *c3 = new Coordinate(1,4);
     Coordinate *c4 = new Coordinate(3,4);
     CPPUNIT_ASSERT_EQUAL(returnChar,w2->getAt(*c));
     CPPUNIT_ASSERT_EQUAL(returnChar2,w2->getAt(*c3));
     CPPUNIT_ASSERT_EQUAL(returnChar2,w2->getAt(*c4));
+    delete c1;
+    delete ctest;
+    delete c3;
+    delete c4;
 
 }
 
@@ -58,6 +63,8 @@ void TestTextbox::testConstructorException()
 
     Coordinate *cTest = new Coordinate(0,0);
     CPPUNIT_ASSERT_THROW(Textbox(*cTest, 0, 0, textFailure), widget_error);
+    delete c1;
+    delete cTest;
 
 }
 
@@ -68,6 +75,8 @@ void TestTextbox:: testGetAtException()
     CPPUNIT_ASSERT_THROW(w->getAt(*cFail), widget_error);
     //Causes segmentation fault
     //CPPUNIT_ASSERT_THROW(w->getAt(*cExact), widget_error);
+    delete cFail;
+    delete cExact;
 }
 
 
