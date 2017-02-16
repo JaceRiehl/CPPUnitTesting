@@ -13,7 +13,7 @@ void TestWindow::setUp()
 
     wi = 200;
     he = 300;
-    defaultValue = 100;
+    defaultValue = 10;
     c = new Coordinate(5,5);
     c1 = new Coordinate();
     w = new BaseWindow();
@@ -39,6 +39,7 @@ void TestWindow::testConstructor()
     //testing with parameters
     CPPUNIT_ASSERT_EQUAL(he, w1->getHeight());
     CPPUNIT_ASSERT_EQUAL(wi, w1->getWidth());
+    delete w;
 }
 
 void TestWindow::testAddWidget()
@@ -49,6 +50,8 @@ void TestWindow::testAddWidget()
     CPPUNIT_ASSERT_EQUAL(wig, w1->getWidgets()[0]);
     w1->addWidget(wig2);
     CPPUNIT_ASSERT_EQUAL(wig2, w1->getWidgets()[1]);
+    delete wig;
+    delete wig2;
 }
 
 
@@ -58,6 +61,7 @@ void TestWindow::testGetHeight()
     Window *w = new BaseWindow();
     CPPUNIT_ASSERT_EQUAL(he, w1->getHeight());
     CPPUNIT_ASSERT_EQUAL(defaultValue, w->getHeight());
+    delete w;
 
 }
 
@@ -70,13 +74,16 @@ void TestWindow::testGetWidgets()
     CPPUNIT_ASSERT_EQUAL(wig, w1->getWidgets()[0]);
     w1->addWidget(wig2);
     CPPUNIT_ASSERT_EQUAL(wig2, w1->getWidgets()[1]);
+    delete wig;
+    delete wig2;
 }
 
 void TestWindow::testGetWidth()
 {
     Window *w = new BaseWindow();
-    CPPUNIT_ASSERT_EQUAL(100u, w->getHeight());
-    CPPUNIT_ASSERT_EQUAL(100u, w->getWidth());
+    CPPUNIT_ASSERT_EQUAL(10u, w->getHeight());
+    CPPUNIT_ASSERT_EQUAL(10u, w->getWidth());
+    delete w;
 }
 
 void TestWindow::testRemoveWidget()
@@ -89,6 +96,8 @@ void TestWindow::testRemoveWidget()
     CPPUNIT_ASSERT_EQUAL(wig2, w1->getWidgets()[1]);
     w1->removeWidget(wig);
     CPPUNIT_ASSERT(wig !=w1->getWidgets()[0]);
+    delete wig;
+    delete wig2;
 }
 
 void TestWindow::testResize()
@@ -103,10 +112,12 @@ void TestWindow::testResize()
 
 void TestWindow::testIllegalSizeError()
 {
-    Window *wFail;
+    Window *wFail = new BaseWindow();
     CPPUNIT_ASSERT_THROW(wFail = new BaseWindow(1050, 1050), illegal_size_error);
     CPPUNIT_ASSERT_THROW(wFail = new BaseWindow(1000, 1050), illegal_size_error);
     CPPUNIT_ASSERT_THROW(wFail = new BaseWindow(1050, 1000), illegal_size_error);
+    delete wFail;
+
 }
 
 
@@ -132,6 +143,8 @@ void TestWindow::testResizeException()
     w1->addWidget(wig2);
     zero = 0;
     CPPUNIT_ASSERT_THROW(w1->resize(zero,zero), illegal_size_error);
+    delete wig;
+    delete wig2;
 
 }
 
@@ -141,29 +154,34 @@ void TestWindow::testWidgetOperationFailedError()
     Widget* wig2 = new Image(*c, 20, 20);
     w1->addWidget(wig);
     CPPUNIT_ASSERT_THROW(w1->addWidget(wig2), widget_operation_failed_error);
+    delete wig;
+    delete wig2;
 }
 
 void TestWindow::testMaximumSizeDeclaration()
 {
-    Window *widgetMax;
+    Window *widgetMax = new BaseWindow();
     //testing width
     CPPUNIT_ASSERT_NO_THROW(BaseWindow(1024,500));
     //testing height
     CPPUNIT_ASSERT_NO_THROW(BaseWindow(500,1024));
     //testing both
     CPPUNIT_ASSERT_NO_THROW(BaseWindow(1024,1024));
+    delete widgetMax;
+
 }
 void TestWindow::testAscii()
 {
     cout << endl;
     Window* w = new AsciiWindow(10,10);
-
     Widget* t = new Textbox(Coordinate(1,1), 5, 1, "Hello");
     Widget* i = new Image(Coordinate(5,5), 3,3);
     w->addWidget(i);
     w->addWidget(t);
-    //cout << t->getAt(Coordinate(4,0));
     w->draw();
+    delete w;
+    delete t;
+    delete i;
 }
 
 

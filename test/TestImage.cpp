@@ -29,6 +29,8 @@ void TestImage::testGetAt()
     char returnChar = 'I';
     CPPUNIT_ASSERT_EQUAL(returnChar,w->getAt(*c));
     CPPUNIT_ASSERT_EQUAL(returnChar,w1->getAt(*c1));
+    delete w1;
+    delete c1;
 }
 
 void TestImage::testGetLocation()
@@ -37,6 +39,8 @@ void TestImage::testGetLocation()
     w1 = new Image(*c1, 0, 0);
     CPPUNIT_ASSERT_EQUAL(true, *c == w->getLocation());
     CPPUNIT_ASSERT_EQUAL(true, *c1 == w1->getLocation());
+    delete c1;
+    delete w1;
 }
 
 void TestImage::testException()
@@ -48,4 +52,6 @@ void TestImage::testException()
 
     CPPUNIT_ASSERT_THROW(w->getAt(*e), widget_error);
     CPPUNIT_ASSERT_THROW(w->getAt(*eMax), widget_error);
+    delete e;
+    delete eMax;
 }

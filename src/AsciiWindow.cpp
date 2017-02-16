@@ -8,8 +8,6 @@
 
         void AsciiWindow::draw()
         {
-
-            //calling out of bounds because its checking for a coordinate outside
             std::vector<Widget*> content = getWidgets();
             cout << " ";
             for(int i = 0; i < getWidth(); i++)
@@ -34,12 +32,8 @@
                             delete get;
 
                         }
-
-
                         else
                             cout << " ";
-
-
                     }
 
                 }
