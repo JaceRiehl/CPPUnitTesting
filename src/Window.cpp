@@ -82,9 +82,13 @@
 
     void Window::setHeight(int h)
     {
+        if(h > MAX_HEIGHT)
+            throw illegal_size_error("Window exceeds maximum size");
          height = h;
     }
     void Window::setWidth(int w)
     {
+        if(w > MAX_WIDTH)
+            throw illegal_size_error("Window exceeds maximum size");
        width = w;
     }

@@ -4,7 +4,9 @@
 #include "Widget.h"
 #include "Coordinate.h"
 #include <vector>
-
+/**
+  * Abstract class for the implementation of a window
+  */
 class Window
 {
 
@@ -54,7 +56,7 @@ public:
      */
     void resize(unsigned int w, unsigned int h);
      /**
-     *
+     * Pure virtual draw
      */
     virtual void draw() = 0;
 
@@ -62,15 +64,26 @@ private:
      /**
      * Setter function for Width
      *@param h The width to be set.
+     *@throw illegal_size_error Exception thrown if the height is above MAX_HEIGHT
      */
     void setHeight(int h);
      /**
      * Setter function for height
      *@param h The height to be set.
+     *@throw illegal_size_error Exception thrown if the width is above MAX_WIDTH
      */
     void setWidth(int w);
+     /**
+     *The width of the window
+     */
     unsigned int width;
+     /**
+     * The height of the window
+     */
     unsigned int height;
+     /**
+     *The vector of Widets in the window
+     */
     std::vector<Widget*> contents;
 };
 
